@@ -13,7 +13,7 @@ public class UserService {
 
     Logger log = LoggerFactory.getLogger(UserService.class);
 
-
+    @Autowired
     private UserRepository userRepository;
 
     public User createUser(User user) {
