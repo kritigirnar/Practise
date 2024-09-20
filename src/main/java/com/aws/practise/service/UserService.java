@@ -3,6 +3,7 @@ package com.aws.practise.service;
 import com.aws.practise.exception.CustomGlobalException;
 import com.aws.practise.model.User;
 import com.aws.practise.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Transactional
     public User createUser(User user) {
 
         //Add validation specific to user

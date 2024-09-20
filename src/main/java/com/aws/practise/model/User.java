@@ -1,20 +1,18 @@
 package com.aws.practise.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "app_user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Change to IDENTITY for auto-increment
-    private Long userId; // Use Long instead of String
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
 
     @NotBlank(message = "UserName cannot be blank")
     private String userName;
